@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Circles from "./Circles";
+import Button from "./Button";
 
 function App() {
   const [circles, setCircles] = useState([]);
@@ -36,18 +37,12 @@ function App() {
         <Circles circle={circle} index={index} key={index} />
       ))}
       <div className="fixed">
-        <button
-          onClick={redoCircles}
-          className="flex p-5 rounded-lg  bg-green-800 m-10"
-        >
-          Redo
-        </button>
-        <button
-          onClick={undoCircles}
-          className="flex p-5 rounded-lg bg-red-800 m-10"
-        >
+        <Button onClick={undoCircles} className="bg-green-800 m-10">
           Undo
-        </button>
+        </Button>
+        <Button onClick={redoCircles} className="bg-red-800 m-10">
+          Redo
+        </Button>
       </div>
     </div>
   );
